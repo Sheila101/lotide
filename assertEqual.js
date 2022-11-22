@@ -1,5 +1,5 @@
-//Function Implemntation
-const assertEqual = function (actual, expected) {
+//Function Implemntation - Assert Equal
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.assert(`Assertion Passed: ${actual} === ${expected}`);
   } else {
