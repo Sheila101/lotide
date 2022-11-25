@@ -2,7 +2,7 @@
 //How to comapre using the 'every' function?
 const eqArrays = (arr1, arr2) => {
   //check to make sure the arrays have the same length
-  if (arr1.length != arr2.length) {
+  if (arr1.length !== arr2.length) {
     return false;
   } else {
     //compare each element of both the arrays
@@ -26,15 +26,15 @@ const assertArraysEqual = (arr1, arr2) => {
 };
 
 //Function implementation - without
-const without = function (sourceArr, itemsToRemoveArr) {
+const without = function(sourceArr, itemsToRemoveArr) {
   //return elements from source that are not pesent in itemsToRemoveArr - original array not modified so return a new array
-  let compareArr = []; 
-    for (let i = 0; i < sourceArr.length; i++) {
-      if (!itemsToRemoveArr.includes(sourceArr[i])) {
-        compareArr.push(sourceArr[i])
-      }
+  let compareArr = [];
+  for (let i = 0; i < sourceArr.length; i++) {
+    if (!itemsToRemoveArr.includes(sourceArr[i])) {
+      compareArr.push(sourceArr[i]);
     }
-    return compareArr; 
+  }
+  return compareArr;
 };
 
 assertArraysEqual(without([1, 2, 3], [1]),[2,3]); // => [2, 3]
