@@ -7,6 +7,7 @@ const assertEqual = function (actual, expected) {
   }
 };
 
+//Function Implemntation - eqArray
 //How to comapre using the 'every' function?
 const eqArrays = (arr1, arr2) => {
 
