@@ -10,9 +10,8 @@ const assertEqual = function (actual, expected) {
 //Function Implemntation - eqArray
 //How to comapre using the 'every' function?
 const eqArrays = (arr1, arr2) => {
-
   //check to make sure the arrays have the same length
-  if (arr1.length != arr2.length) {
+  if (arr1.length !== arr2.length) {
     return false;
   } else {
     //compare each element of both the arrays
@@ -23,8 +22,9 @@ const eqArrays = (arr1, arr2) => {
         return false;
       }
     }
+    return true;
   }
-}
+};
 
 //Test Code
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); //true 

@@ -13,7 +13,7 @@ const eqArrays = (arr1, arr2) => {
         return false;
       }
     }
-    return true;
+    return true; 
   }
 };
 
@@ -26,18 +26,25 @@ const assertArraysEqual = (arr1, arr2) => {
   }
 };
 
-//Function implementation - without
-const without = function(sourceArr, itemsToRemoveArr) {
-  //return elements from source that are not pesent in itemsToRemoveArr - original array not modified so return a new array
-  let compareArr = [];
-  for (let i = 0; i < sourceArr.length; i++) {
-    if (!itemsToRemoveArr.includes(sourceArr[i])) {
-      compareArr.push(sourceArr[i]);
-    }
+//Fucntion implementation - middle
+const middle = function (array) {
+  if (array.length <= 2) {
+    return [];
   }
-  return compareArr;
+  const returnedNum = Math.floor(array.length / 2);
+  if (array.length % 2 !== 0) {
+    return [array[returnedNum]];
+  } else {
+    return [array[returnedNum - 1], array[returnedNum]];
+  }
 };
 
-assertArraysEqual(without([1, 2, 3], [1]),[2,3]); // => [2, 3]
-assertArraysEqual(without(['1', '2', '3'], [1, 2, '3']), ['1', '2']); // => ["1", "2"]
-assertArraysEqual(without(['dog', 'cat', 'milk'], ['dog', 'cat', 'cow']), ['milk']); // => ["milk"]
+//Test
+assertArraysEqual(middle([1]), []); // => []
+assertArraysEqual(middle([1, 2]), []); // => []
+
+assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
+
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => [2, 3]
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]); // => [ 4]
